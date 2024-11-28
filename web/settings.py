@@ -119,7 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # 개발 중에는 정적 파일 디렉토리를 지정해야 함
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # static 디렉토리의 경로
