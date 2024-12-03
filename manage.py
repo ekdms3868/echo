@@ -20,4 +20,13 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "web.settings")
+    from django.core.management import execute_from_command_line
+
+    # 기본 포트 변경
+    if "runserver" in sys.argv:
+        if len(sys.argv) == 2:
+            sys.argv.append("0.0.0.0:80")
+
+    execute_from_command_line(sys.argv)
